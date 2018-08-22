@@ -8,3 +8,7 @@
 .light-blue-backdrop {
   background-color: #5cb3fd;
 }
+
+.alexa-invocation-container {
+  border: 1px solid black
+}

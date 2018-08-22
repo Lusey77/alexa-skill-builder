@@ -1,0 +1,27 @@
+<div class="modal-header">
+  <h4 class="modal-title">Add Alexa Interaction</h4>
+  <button type="button" class="close" aria-label="Close" (click)="closeClicked()">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+<div class="modal-body">
+  <div class="form-group">
+    <label for="invocations">Alexa Invocations</label>
+    <input id="invocations" class="form-control" (keyup.enter)="addInvocation()" [(ngModel)]="invocation" placeholder="What do you want to say to Alexa?">
+    <div class="container mt-3" *ngIf="alexaSkillModel.invocations.length">
+      <div class="container alexa-invocation-container" style="max-height: 200px; overflow-y: scroll">
+        <div *ngFor="let invocation of alexaSkillModel.invocations">
+          {{invocation}}
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="reply">Alexa Response</label>
+    <input id="reply" class="form-control" [(ngModel)]="alexaSkillModel.response" placeholder="How do you want Alexa to respond?">
+  </div>
+</div>
+<div class="modal-footer">
+  <button type="button" class="btn btn-light" (click)="saveClicked()">Save</button>
+</div>
